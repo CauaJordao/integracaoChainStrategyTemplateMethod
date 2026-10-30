@@ -1,0 +1,6 @@
+digraph G {
+        graph [fontname="DejaVu Sans",bgcolor="white",pad="0.35",nodesep="0.5",ranksep="0.75",splines=polyline];
+        node [shape=box,style="rounded,filled",color="#4F46E5",fillcolor="#EEF2FF",fontcolor="#111827",fontname="DejaVu Sans",fontsize=12,margin="0.18,0.13"];
+        edge [color="#64748B",fontcolor="#334155",fontname="DejaVu Sans",fontsize=10,arrowsize=.75];
+     rankdir=LR; solicitacao [label="Solicitação\nde Reembolso"]; template [label="Template Method\nFuncionario\nElegibilidade"]; chain [label="Chain of Responsibility\nSupervisor > Gerente > Diretor"]; strategy [label="Strategy\nPix / Transferência / Cartão"]; negado [label="Negado (R$ 0)",color="#B91C1C"]; aprovado [label="Aprovado e pago",color="#047857"]; solicitacao -> template; template -> chain [label="elegível"]; template -> negado [label="inelegível"]; chain -> strategy [label="aprovado"]; chain -> negado [label="sem aprovador"]; strategy -> aprovado; 
+}
